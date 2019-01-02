@@ -8,11 +8,6 @@
 #include <regex>
 using namespace std;
 
-/*
-*  This class is just a huge design mess, next time think about it before you start coding.
-*  if time allows update yet again. Made lots of quick fixes that lead to bad code.
-*  User better control flow way to many dependancies
-*/
 
 #define ALL_GROUP_FLAG 0
 #define FIND_BY_ADDRESS_FLAG 1
@@ -103,7 +98,6 @@ void container::printData( int flag )
 
 /*
 *  Fix in next version update orginal print function use flags
-*  in order to print other shit.
 */
 void container::printFindBy( string groupName )
 {
@@ -116,7 +110,6 @@ void container::printFindBy( string groupName )
       cout << (*stringIt) << ", ";
 }
 
-//meh
 void container::findAllNonSFJazz()
 {
    vector<personInstance>::iterator it;
@@ -157,7 +150,6 @@ void container::readFile(  )
    in.close();
 }
 
-// Runs really slow O(N)
 void container::compareAddressToVec( string line, string groupName )
 {
    vector<personInstance>::iterator it;
@@ -176,9 +168,7 @@ void container::compareAddressToVec( string line, string groupName )
 
 
 /*
-*  QUICK BUT TERRIBLE SOLUTION NEXT VERSION UPDATE WITH REGEX
-*  INORDER TO FIX CASE PROBLEM
-*  MUCH SHAME
+*  TERRIBLE SOLUTION NEXT VERSION UPDATE WITH REGEX
 */
 void container::findbyGroup( string groupName )
 {
